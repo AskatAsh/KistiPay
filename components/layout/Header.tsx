@@ -95,8 +95,8 @@ export default function Header() {
                         <Button
                             asChild
                             className={cn(
-                                "font-semibold border-0 px-6 py-2 rounded-2xl transition-all duration-300 h-13",
-                                "bg-brand-teal text-white",
+                                "font-semibold border-0 px-8 py-2 rounded-2xl transition-all duration-300 h-13",
+                                "bg-brand-teal text-white text-base",
                                 "hover:bg-brand-teal/90 hover:-translate-y-0.5 hover:shadow",
                             )}
                         >
