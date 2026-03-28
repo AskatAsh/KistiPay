@@ -15,8 +15,8 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "KistiPay",
-  description: "Your payment platform",
+  title: "Kisti Pay",
+  description: "Own your purchases, Pay your way",
 };
 
 export default function RootLayout({
