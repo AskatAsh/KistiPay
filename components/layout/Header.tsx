@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { LogoIcon } from "../icons";
 
 const navLinks = [
     { label: "Personal", href: "#personal" },
@@ -55,24 +55,17 @@ export default function Header() {
                 scrolled && "bg-white shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-3"
             )}
         >
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="container">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <Link
                         href="/"
                         className="flex items-center shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal rounded"
                     >
-                        <Image
-                            src="/assets/icons/logo.svg"
-                            alt="KistiPay"
-                            width={120}
-                            height={40}
-                            priority
-                            className={cn(
-                                "w-auto transition-all duration-300",
-                                scrolled ? "h-6" : "h-8"
-                            )}
-                        />
+                        <LogoIcon className={cn(
+                            "w-auto transition-all duration-300",
+                            scrolled ? "h-6" : "h-8 md:h-10"
+                        )} />
                     </Link>
 
                     {/* Desktop Nav Links */}
