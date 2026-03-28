@@ -9,7 +9,7 @@ export default function HeroLanding() {
             {/* ── Ellipsis Glow Blobs ── */}
             {/* Ellipsis 01 */}
             <div
-                className="absolute rounded-full bg-[#fcefcf] opacity-20 border-2 border-black pointer-events-none"
+                className="absolute rounded-full bg-[#fcefcf] opacity-20 border-2 border-black pointer-events-none hidden md:block"
                 style={{
                     width: "637px",
                     height: "637px",
@@ -77,7 +77,7 @@ export default function HeroLanding() {
 
                 {/* Hero Image + Floating Tags */}
                 <div className="flex justify-center items-center">
-                    <div className="relative w-full max-w-183.75 h-100 mx-auto">
+                    <div className="relative w-full max-w-183.75 md:h-100 mx-auto">
 
                         {/* Main Image */}
                         <Image
@@ -92,7 +92,7 @@ export default function HeroLanding() {
 
                         {/* Floating Tag — No Late Fees */}
                         <div
-                            className="absolute flex items-center gap-2 bg-neutral-01 rounded-2xl z-10 px-4 py-4 sm:px-5 top-[10%] -left-[5%] lg:-left-[25%] animate-float-0 bg-clip-padding border-4 border-[#1E96F61A]"
+                            className="absolute flex items-center gap-2 bg-neutral-01 rounded-2xl z-10 pl-2 pr-4 py-2 sm:px-5 top-[10%] -left-[5%] lg:-left-[25%] animate-float-0 bg-clip-padding border-4 border-[#1E96F61A]"
                         >
                             <Image src="/assets/icons/no-late-fees.svg" alt="no late fees icon" width={36} height={36} />
                             <span
@@ -105,7 +105,7 @@ export default function HeroLanding() {
 
                         {/* Floating Tag — Sharia Compliant */}
                         <div
-                            className="absolute flex items-center gap-2 bg-neutral-01 rounded-2xl z-10 px-4 py-4 sm:px-5 bg-clip-padding border-4 border-[#5B21B61A] top-[35%] -right-[5%] lg:-right-[25%] animate-float-1"
+                            className="absolute flex items-center gap-2 bg-neutral-01 rounded-2xl z-10 pl-2 pr-4 py-2 sm:px-5 bg-clip-padding border-4 border-[#5B21B61A] top-[70%] sm:top-[35%] -right-[5%] lg:-right-[25%] animate-float-1"
                         >
                             <Image src="/assets/icons/sharia-compliant.svg" alt="sharia compliant icon" width={36} height={36} />
                             <span
