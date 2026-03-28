@@ -2,9 +2,8 @@ import { SVGProps } from "react";
 
 export default function LogoIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
     return (
-        <svg width="auto" height="auto" viewBox="0 0 173 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-            className={className}
-            {...props}>
+        <svg width="auto" height="auto" viewBox="0 0 173 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+            className={className} {...props}>
             <path fillRule="evenodd" clipRule="evenodd" d="M82.6297 5.70581C72.8053 2.59253 61.2482 0.596354 48.7825 0.093689V3.10444C61.4699 3.66743 73.103 5.93099 82.6297 9.41018V5.70581Z" fill="url(#paint0_linear_6578_108)" />
             <path fillRule="evenodd" clipRule="evenodd" d="M4.948 4.96635V8.55831C14.778 5.30091 26.6085 3.28912 39.4015 3.00188V0C26.8014 0.257515 15.0439 2.03877 4.948 4.96635Z" fill="url(#paint1_linear_6578_108)" />
             <path d="M141.245 21.8816C141.245 17.9509 137.444 14.7543 133.555 14.7543C129.626 14.7543 126.515 17.9509 126.515 21.8816C126.515 25.7692 129.626 28.9226 133.555 28.9226C137.444 28.9226 141.245 25.8556 141.245 21.8816ZM145.478 10.9099V32.3783H141.202V29.7437C140.986 29.9596 140.727 30.262 140.425 30.4774C138.568 31.9895 136.192 32.8966 133.555 32.8966C127.379 32.8966 122.455 27.886 122.455 21.7952C122.455 15.7044 127.379 10.6939 133.555 10.6939C136.105 10.6939 138.48 11.6009 140.425 13.0698C140.684 13.329 140.942 13.6745 141.202 13.9337V10.9098L145.478 10.9099Z" fill="#F3BA2A" />

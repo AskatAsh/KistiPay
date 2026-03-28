@@ -1,7 +1,6 @@
 import { ArrowUp } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { LogoIcon } from "../icons";
+import { InstagramIcon, LinkedinIcon, LogoIcon, XIcon } from "../icons";
 
 const navLinks = [
     { label: "About", href: "#" },
@@ -18,15 +17,15 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-    { label: "LinkedIn", href: "#", src: "/assets/icons/LinkedinLogo.svg" },
-    { label: "Instagram", href: "#", src: "/assets/icons/InstagramLogo.svg" },
-    { label: "Twitter", href: "#", src: "/assets/icons/XLogo.svg" },
+    { label: "LinkedIn", href: "#", icon: LinkedinIcon },
+    { label: "Instagram", href: "#", icon: InstagramIcon },
+    { label: "Twitter", href: "#", icon: XIcon }
 ];
 
 export default function Footer() {
     return (
         <footer className="bg-neutral-05 text-white pt-24 pb-8">
-            <div className="container">
+            <div className="max-w-334 mx-auto px-4 md:px-6">
 
                 {/* Top Grid */}
                 <div className="flex flex-col md:flex-row md:flex-wrap justify-between lg:justify-end gap-12 flex-1">
@@ -75,14 +74,14 @@ export default function Footer() {
                                 Follow Us On
                             </h3>
                             <div className="flex items-center md:justify-end gap-6 mt-6">
-                                {socialLinks.map(({ label, href, src }) => (
+                                {socialLinks.map(({ label, href, icon: Icon }) => (
                                     <Link
                                         key={label}
                                         href={href}
                                         aria-label={label}
                                         className="text-white transition-colors duration-200 hover:text-brand-teal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal rounded"
                                     >
-                                        <Image width={32} height={32} src={src} alt={label} />
+                                        <Icon className="w-8 h-8 text-neutral-01 hover:text-brand-teal" />
                                     </Link>
                                 ))}
                             </div>
@@ -95,13 +94,6 @@ export default function Footer() {
 
                     {/* Logo */}
                     <div className="h-24 sm:h-28 flex items-end">
-                        {/* <Image
-                            src="/assets/icons/logo_large.svg"
-                            alt="KistiPay logo"
-                            width={482}
-                            height={112}
-                            className="h-full w-auto object-contain"
-                        /> */}
                         <LogoIcon className="h-16 md:h-20 lg:h-28" />
                     </div>
 
