@@ -24,7 +24,7 @@ export default function SellAnywhereSection() {
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
                     {/* ── Left: 2x2 Image Grid ── */}
-                    <div className="w-full lg:w-1/2 shrink-0">
+                    <div className="flex-1">
                         <div
                             className="bg-[#EEF6FB] rounded-3xl p-5 sm:p-8"
                         >
@@ -42,7 +42,7 @@ export default function SellAnywhereSection() {
                     </div>
 
                     {/* ── Right: Text Content ── */}
-                    <div className="w-full lg:w-1/2">
+                    <div className="flex-1">
                         {/* Heading */}
                         <h2
                             className="font-serif font-bold text-neutral-05 leading-[1.1] mb-5
