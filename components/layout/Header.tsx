@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LogoIcon } from "../icons";
 
@@ -17,7 +18,7 @@ const navLinks = [
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState("");
+    const pathname = usePathname();
 
     // Sticky scroll effect
     useEffect(() => {
@@ -74,14 +75,13 @@ export default function Header() {
                             <li key={link.label}>
                                 <Link
                                     href={link.href}
-                                    onClick={() => setActiveLink(link.label)}
                                     className={cn(
                                         "relative px-3 py-1 text-base font-sans transition-colors duration-300 rounded",
                                         "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal",
                                         // Default state
-                                        activeLink !== link.label && "font-normal text-neutral-03 hover:text-brand-teal",
+                                        pathname !== link.href && "font-normal text-neutral-03 hover:text-brand-teal",
                                         // Active state
-                                        activeLink === link.label && "font-semibold text-neutral-04"
+                                        pathname === link.href && "font-semibold text-neutral-04"
                                     )}
                                 >
                                     {link.label}
@@ -147,13 +147,12 @@ export default function Header() {
                                     <Link
                                         href={link.href}
                                         onClick={() => {
-                                            setActiveLink(link.label);
                                             setMenuOpen(false);
                                         }}
                                         className={cn(
                                             "block py-3 text-base font-sans transition-colors duration-200",
                                             "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal rounded",
-                                            activeLink !== link.label
+                                            pathname !== link.href
                                                 ? "font-normal text-neutral-03 hover:text-brand-teal"
                                                 : "font-semibold text-neutral-04"
                                         )}

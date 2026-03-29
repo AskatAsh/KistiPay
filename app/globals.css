@@ -244,4 +244,7 @@
   .container {
     @apply lg:max-w-300! xl:max-w-300! 2xl:max-w-300! w-full mx-auto px-4 md:px-6;
   }
+  .section-spacing {
+    @apply py-20 sm:py-25;
+  }
 }

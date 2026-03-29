@@ -100,9 +100,7 @@ function FeatureCardItem({ title, desc, bg, icon }: FeatureCard) {
         >
             {/* Title */}
             <h3
-                className="font-serif font-bold text-neutral-05 text-[1.25rem] sm:text-2xl
-          self-start text-left w-full"
-            >
+                className="font-serif font-semibold text-neutral-05 text-[1.25rem] sm:text-2xl self-start text-left w-full">
                 {title}
             </h3>
 
@@ -129,8 +127,8 @@ function FeatureCardItem({ title, desc, bg, icon }: FeatureCard) {
 
 export default function PaymentsSection() {
     return (
-        <section className="py-[120px]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-25 sm:py-30">
+            <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                     {cards.map((card, index) =>
                         card.type === "hero" ? (
