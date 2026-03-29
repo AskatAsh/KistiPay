@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { LogoIcon } from "../icons";
 
 const navLinks = [
-    { label: "Personal", href: "#personal" },
+    { label: "Personal", href: "/personal" },
     { label: "Business", href: "/business" },
     { label: "Company", href: "#company" },
     { label: "Support", href: "#support" },
