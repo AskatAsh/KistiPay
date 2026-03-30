@@ -1,4 +1,4 @@
-import CustomBadge from "@/components/ui/customBadge";
+import SectionHeader from "@/components/shared/SectionHeader";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -79,38 +79,24 @@ export default function BrandsSection() {
             <div className="container">
 
                 {/* Section Header */}
-                <div className="flex flex-col items-center text-center mb-10">
-                    <CustomBadge>Trusted Partner</CustomBadge>
-
-                    <h2
-                        className="font-serif font-bold text-neutral-05 leading-[1.1] mt-4 mb-4
-              text-[1.75rem] sm:text-[2.25rem] lg:text-[2.75rem]"
-                    >
-                        Shop brands you love
-                    </h2>
-
-                    <p className="font-sans font-normal text-neutral-03 text-base sm:text-[1.0625rem] leading-relaxed mb-4">
-                        Discover trusted partners across multiple categories.
-                    </p>
-
+                <SectionHeader badgeText="Trusted Partner" title="Shop brands you love" subtitle="Discover trusted partners across multiple categories.">
                     {/* CTA Button */}
                     <Link
                         href="#brands"
                         className="inline-flex items-center justify-center
               font-sans font-medium text-base text-white
               bg-brand-teal hover:bg-brand-teal/90
-              h-[42px] px-4 rounded-xl mt-2
+              h-[42px] px-4 rounded-xl sm:mt-8
               transition-all duration-300 ease-in-out
-              hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-teal/25
-              focus-visible:outline-2 focus-visible:outline-offset-4
-              focus-visible:outline-brand-teal"
+              hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-teal/25"
                     >
                         Discover Brands
                     </Link>
-                </div>
+                </SectionHeader>
+
 
                 {/* Brand Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {brandsData.map((brand) => (
                         <BrandCard key={brand.title} {...brand} />
                     ))}
