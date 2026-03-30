@@ -11,8 +11,7 @@ export default function AppDownloadSection() {
 
                 {/* Download Card */}
                 <div
-                    className="rounded-3xl px-8 py-16 sm:p-16 overflow-hidden"
-                    style={{ backgroundColor: "#FCEFCF" }}
+                    className="rounded-3xl px-8 py-16 sm:p-16 overflow-hidden bg-[#FCEFCF] bg-no-repeat bg-[url('/assets/images/download-app-bg-01.svg'),url('/assets/images/download-app-bg-02.svg'),url('/assets/images/download-app-bg-03.svg')] bg-position-[-90%_100%,50%_48%,50%_94%] md:bg-position-[75%_100%,89%_10%,89%_90%]"
                 >
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 
@@ -67,7 +66,6 @@ export default function AppDownloadSection() {
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

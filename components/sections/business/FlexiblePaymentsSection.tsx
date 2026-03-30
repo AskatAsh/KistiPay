@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/shared/SectionHeader";
 import Image from "next/image";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -21,38 +22,29 @@ const features = [
 
 export default function FlexiblePaymentsSection() {
     return (
-        <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+        <section className="section-spacing">
+            <div className="container">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
                     {/* ── Left: Text Content ── */}
                     <div className="flex-1">
 
                         {/* Heading */}
-                        <h2
-                            className="font-serif font-bold text-neutral-05 leading-[1.1] mb-5
-                text-[2rem] sm:text-[2.75rem] lg:text-[3.25rem]"
-                        >
-                            Flexible Payments Made Simple
-                        </h2>
-
-                        {/* Subtitle */}
-                        <p
-                            className="font-sans font-normal text-neutral-03 text-base sm:text-[1.0625rem]
-                leading-relaxed mb-10"
-                        >
-                            Customers can split purchases into manageable installments or pay
-                            in full.
-                        </p>
+                        <SectionHeader
+                            title="Flexible Payments Made Simple"
+                            titleStyles="font-semibold text-neutral-04 lg:text-[3rem] leading-[1.1] mt-0"
+                            subtitle="Customers can split purchases into manageable installments or pay
+                            in full."
+                            wrapperStyles="mb-8 sm:mb-9 items-start text-left" />
 
                         {/* Feature List */}
-                        <div className="flex flex-col gap-7">
+                        <div className="flex flex-col gap-6 px-4">
                             {features.map((feature, index) => (
                                 <div key={index}>
-                                    <h3 className="font-serif font-bold text-neutral-05 text-xl sm:text-2xl mb-2">
+                                    <h3 className="font-serif font-semibold text-neutral-04 text-xl sm:text-2xl mb-4">
                                         {feature.title}
                                     </h3>
-                                    <p className="font-sans font-normal text-neutral-03 text-base leading-relaxed">
+                                    <p className="font-normal text-neutral-03 text-base leading-6">
                                         {feature.desc}
                                     </p>
                                 </div>
@@ -63,15 +55,15 @@ export default function FlexiblePaymentsSection() {
                     {/* ── Right: Phone Mockup ── */}
                     <div className="flex-1">
                         <div
-                            className="bg-[#F5EFE6] rounded-3xl p-5 sm:p-8"
+                            className="bg-[#FCEFCF50] rounded-[32px] p-4 sm:p-6"
                         >
                             {/* Image */}
-                            <div className="rounded-xl overflow-hidden aspect-533/600 bg-white/60 flex items-center justify-center">
+                            <div className="rounded-xl overflow-hidden aspect-576/648 bg-white/60 flex items-center justify-center">
                                 <Image
                                     src="/assets/images/flexible-payments-made-simple.png"
                                     alt="KistiPay payment schedule on phone"
-                                    width={533}
-                                    height={600}
+                                    width={576}
+                                    height={648}
                                     className="h-full w-full object-cover"
                                 />
                             </div>

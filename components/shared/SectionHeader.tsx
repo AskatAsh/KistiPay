@@ -9,17 +9,18 @@ interface IProps {
     subtitleStyles?: string;
     badgeText?: string;
     badgeStyles?: string;
+    wrapperStyles?: string;
     children?: ReactNode;
 }
 
-const SectionHeader = ({ title, subtitle, titleStyles, subtitleStyles, badgeText, badgeStyles, children }: IProps) => {
+const SectionHeader = ({ title, subtitle, titleStyles, subtitleStyles, badgeText, badgeStyles, wrapperStyles, children }: IProps) => {
     return (
-        <div className={cn("flex flex-col items-center text-center mb-12 sm:mb-20", badgeStyles)}>
-            {badgeText && <CustomBadge>{badgeText}</CustomBadge>}
+        <div className={cn("flex flex-col items-center text-center mb-12 sm:mb-20", wrapperStyles)}>
+            {badgeText && <CustomBadge className={badgeStyles}>{badgeText}</CustomBadge>}
 
             <h2
                 className={
-                    cn("font-serif font-bold text-neutral-05 leading-[1.1] mt-2 mb-4 text-[2.25rem] lg:text-[3.875rem]", titleStyles)}
+                    cn("font-serif font-bold text-neutral-05 mt-2 mb-4 text-[2.25rem] lg:text-[3.875rem] leading-[1.1]", titleStyles)}
             >
                 {title}
             </h2>

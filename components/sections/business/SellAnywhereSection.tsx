@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/shared/SectionHeader";
 import Image from "next/image";
 
 const features = [
@@ -19,14 +20,14 @@ const features = [
 
 export default function SellAnywhereSection() {
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <section className="section-spacing">
+            <div className="container">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-14">
 
                     {/* ── Left: 2x2 Image Grid ── */}
                     <div className="flex-1">
                         <div
-                            className="bg-[#EEF6FB] rounded-3xl p-5 sm:p-8"
+                            className="bg-[#D3F5F850] rounded-[32px] p-4 sm:p-6"
                         >
                             {/* Image */}
                             <div className="rounded-xl overflow-hidden aspect-533/600 bg-white/60 flex items-center justify-center">
@@ -44,27 +45,20 @@ export default function SellAnywhereSection() {
                     {/* ── Right: Text Content ── */}
                     <div className="flex-1">
                         {/* Heading */}
-                        <h2
-                            className="font-serif font-bold text-neutral-05 leading-[1.1] mb-5
-                text-[2rem] sm:text-[2.5rem] lg:text-[3rem]"
-                        >
-                            Sell Anywhere with KistiPay
-                        </h2>
-
-                        {/* Subtitle */}
-                        <p className="font-sans font-normal text-neutral-03 text-base sm:text-[1.0625rem] leading-relaxed mb-10">
-                            Whether your customers shop online or in person, KistiPay helps
-                            you provide flexible payment options at checkout.
-                        </p>
+                        <SectionHeader
+                            title="Sell Anywhere with KistiPay"
+                            titleStyles="font-semibold text-neutral-04 lg:text-[3rem] leading-[1.1] mt-0"
+                            subtitle="Whether your customers shop online or in person, KistiPay helps you provide flexible payment options at checkout."
+                            wrapperStyles="mb-8 sm:mb-9 items-start text-left" />
 
                         {/* Feature List */}
-                        <div className="flex flex-col gap-8">
+                        <div className="flex flex-col gap-6 px-4">
                             {features.map((feature, index) => (
                                 <div key={index}>
-                                    <h3 className="font-serif font-bold text-neutral-05 text-xl sm:text-2xl mb-2">
+                                    <h3 className="font-serif font-semibold text-neutral-04 text-xl sm:text-2xl mb-4">
                                         {feature.title}
                                     </h3>
-                                    <p className="font-sans font-normal text-neutral-03 text-base leading-relaxed">
+                                    <p className="font-normal text-neutral-03 text-base leading-6">
                                         {feature.desc}
                                     </p>
                                 </div>

@@ -1,8 +1,9 @@
-import Link from "next/link";
+import SectionHeader from "@/components/shared/SectionHeader";
+import { CTALinkButton } from "@/components/ui/CTALinkButton";
 
 export default function CTASection() {
     return (
-        <section className="py-12 sm:py-25 px-4 sm:px-6 lg:px-8">
+        <section className="section-spacing">
             <div className="container">
 
                 {/* CTA Card */}
@@ -19,34 +20,19 @@ export default function CTASection() {
                     {/* Content */}
                     <div className="relative z-10 max-w-3xl mx-auto">
 
-                        {/* Heading */}
-                        <h2
-                            className="font-serif font-bold text-neutral-05 leading-[1.1] mb-5
-                text-[2rem] sm:text-[2.75rem] lg:text-[3.5rem]"
-                        >
-                            Start offering flexible payments today
-                        </h2>
+                        <SectionHeader
+                            title="Start offering flexible payments today"
+                            titleStyles="mt-0"
+                            subtitle="Join businesses that are growing their sales by giving customers
+                            more ways to pay."
+                            wrapperStyles="mb-0 sm:mb-0">
+                            {/* CTA Button */}
+                            <CTALinkButton href="#" className="mt-6">
+                                Join KistiPay Business
+                            </CTALinkButton>
+                        </SectionHeader>
 
-                        {/* Subtitle */}
-                        <p className="font-sans font-normal text-neutral-03 text-base sm:text-[1.0625rem] leading-relaxed mb-8">
-                            Join businesses that are growing their sales by giving customers
-                            more ways to pay.
-                        </p>
 
-                        {/* CTA Button */}
-                        <Link
-                            href="#"
-                            className="inline-flex items-center justify-center
-                font-sans font-semibold text-white text-base
-                bg-brand-teal hover:bg-brand-teal/90
-                px-8 py-3.5 rounded-xl
-                transition-all duration-300 ease-in-out
-                hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-teal/25
-                focus-visible:outline-2 focus-visible:outline-offset-4
-                focus-visible:outline-brand-teal"
-                        >
-                            Join KistiPay Business
-                        </Link>
                     </div>
 
                 </div>

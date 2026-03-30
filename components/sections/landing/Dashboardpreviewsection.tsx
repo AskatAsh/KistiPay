@@ -1,7 +1,7 @@
+import { CTALinkButton } from "@/components/ui/CTALinkButton";
 import CustomBadge from "@/components/ui/customBadge";
 import { ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -56,20 +56,10 @@ export default function DashboardPreviewSection() {
                         </ul>
 
                         {/* CTA Button */}
-                        <Link
-                            href="#download"
-                            className="inline-flex items-center gap-2
-                font-sans font-semibold text-base text-white
-                bg-brand-teal hover:bg-brand-teal/90
-                px-6 py-3 rounded-xl
-                transition-all duration-300 ease-in-out
-                hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-teal/25
-                focus-visible:outline-2 focus-visible:outline-offset-4
-                focus-visible:outline-brand-teal"
-                        >
+                        <CTALinkButton href="#">
                             <span>Partner with KistiPay</span>
                             <ArrowRight size={20} strokeWidth={2} />
-                        </Link>
+                        </CTALinkButton>
                     </div>
 
                     {/* ── Right: Dashboard Image ── */}

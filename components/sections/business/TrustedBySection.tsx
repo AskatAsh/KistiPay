@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/shared/SectionHeader";
 import Image from "next/image";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -14,17 +15,14 @@ const partners = [
 
 export default function TrustedBySection() {
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+        <section className="section-spacing">
+            <div className="container">
 
                 {/* Heading */}
-                <h2
-                    className="font-serif font-bold text-neutral-05 text-center leading-[1.15] mx-auto mb-14
-            text-[1.75rem] sm:text-[2.25rem] lg:text-[2.75rem]"
-                    style={{ maxWidth: "600px" }}
-                >
-                    Businesses trust KistiPay to power flexible payments
-                </h2>
+                <SectionHeader
+                    title="Businesses trust KistiPay to power flexible payments"
+                    titleStyles="font-semibold text-neutral-04 text-center lg:text-[3rem] leading-[1.1] mt-0"
+                    wrapperStyles="mb-10 sm:mb-16 max-w-[770px] mx-auto" />
 
                 {/* Logo Cards Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">

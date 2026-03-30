@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/shared/SectionHeader";
 import Image from "next/image";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -40,28 +41,21 @@ const integrations = [
 export default function EasyIntegrationSection() {
     return (
         <section
-            className="py-20 px-4 sm:px-6 lg:px-8"
+            className="section-spacing"
             style={{
-                background:
-                    "linear-gradient(135deg, #f5f0eb 0%, #f0ede8 40%, #eaf0ee 100%)",
+                background: "linear-gradient(102.31deg, rgba(241, 221, 218, 0.4) 0%, rgba(211, 245, 248, 0.2) 99.51%)"
             }}
         >
-            <div className="max-w-7xl mx-auto">
+            <div className="container">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
 
-                    {/* ── Left: Text ── */}
-                    <div className="w-full lg:w-[38%] order-2 lg:order-1">
-                        <h2
-                            className="font-serif font-bold text-neutral-05 leading-[1.1] mb-5
-                text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem]"
-                        >
-                            Easy Integration
-                        </h2>
-                        <p className="font-sans font-normal text-neutral-03 text-base sm:text-[1.0625rem] leading-relaxed">
-                            Add KistiPay to your store with simple platform or API
-                            integration.
-                        </p>
-                    </div>
+                    {/* ── Left: header ── */}
+                    <SectionHeader
+                        title="Easy Integration"
+                        titleStyles="text-neutral-04 mt-0"
+                        subtitle="Add KistiPay to your store with simple platform or API
+                            integration."
+                        wrapperStyles="mb-0 sm:mb-0 items-start text-left" />
 
                     {/* ── Right: Integration Cards Grid ── */}
                     <div className="w-full lg:w-[62%] order-1 lg:order-2">
@@ -69,12 +63,7 @@ export default function EasyIntegrationSection() {
                             {integrations.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="flex flex-col items-center justify-between
-                    bg-white/80 rounded-2xl
-                    px-4 py-6 sm:px-6 sm:py-8
-                    border border-white/60
-                    transition-all duration-300 ease-in-out
-                    hover:-translate-y-1 hover:shadow-md hover:bg-white"
+                                    className="flex flex-col items-center justify-center bg-white/80 rounded-2xl px-3 py-10 border border-white/60 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:bg-white aspect-176/204"
                                 >
                                     {/* Icon circle */}
                                     <Image
@@ -86,7 +75,7 @@ export default function EasyIntegrationSection() {
                                     />
 
                                     {/* Label */}
-                                    <span className="font-sans font-normal text-neutral-03 text-sm sm:text-base text-center">
+                                    <span className="font-medium text-neutral-02 text-xl text-center">
                                         {item.name}
                                     </span>
                                 </div>

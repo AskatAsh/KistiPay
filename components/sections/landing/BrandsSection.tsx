@@ -1,6 +1,6 @@
 import SectionHeader from "@/components/shared/SectionHeader";
+import { CTALinkButton } from "@/components/ui/CTALinkButton";
 import Image from "next/image";
-import Link from "next/link";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -81,17 +81,9 @@ export default function BrandsSection() {
                 {/* Section Header */}
                 <SectionHeader badgeText="Trusted Partner" title="Shop brands you love" subtitle="Discover trusted partners across multiple categories.">
                     {/* CTA Button */}
-                    <Link
-                        href="#brands"
-                        className="inline-flex items-center justify-center
-              font-sans font-medium text-base text-white
-              bg-brand-teal hover:bg-brand-teal/90
-              h-[42px] px-4 rounded-xl sm:mt-8
-              transition-all duration-300 ease-in-out
-              hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-teal/25"
-                    >
+                    <CTALinkButton href="#" className="font-medium text-base h-[42px] px-4 rounded-xl sm:mt-6">
                         Discover Brands
-                    </Link>
+                    </CTALinkButton>
                 </SectionHeader>
 
 
