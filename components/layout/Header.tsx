@@ -77,10 +77,7 @@ export default function Header() {
                         href="/"
                         className="flex items-center shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal rounded"
                     >
-                        <LogoIcon className={cn(
-                            "w-auto transition-all duration-300",
-                            scrolled ? "h-6" : "h-8 md:h-10"
-                        )} />
+                        <LogoIcon className="transition-all duration-300 h-8 md:h-10 w-full" />
                     </Link>
 
                     {/* Desktop Nav Links */}

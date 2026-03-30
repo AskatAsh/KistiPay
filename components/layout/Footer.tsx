@@ -94,7 +94,7 @@ export default function Footer() {
 
                     {/* Logo */}
                     <div className="h-24 sm:h-28 flex items-end">
-                        <LogoIcon className="h-16 md:h-20 lg:h-28" />
+                        <LogoIcon className="h-16 md:h-20 lg:h-28 w-full" />
                     </div>
 
                     {/* Back to Top + Copyright */}
