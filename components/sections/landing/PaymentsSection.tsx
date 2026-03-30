@@ -105,13 +105,13 @@ function FeatureCardItem({ title, desc, bg, icon }: FeatureCard) {
             </h3>
 
             {/* Icon */}
-            <div className="my-8 sm:my-6">
+            <div className="my-6 sm:my-8 relative h-30 w-full">
                 <Image
                     src={icon}
                     alt={title}
-                    width={120}
-                    height={120}
-                    className="h-20 sm:h-30 w-auto object-contain"
+                    fill
+                    sizes="120px"
+                    className="object-contain"
                 />
             </div>
 

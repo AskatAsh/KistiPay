@@ -64,12 +64,12 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* KistiPay custom tokens */
-  --brand-teal: oklch(0.726 0.122 207); /* #21BEC9 */
-  --brand-gold: oklch(0.84 0.163 82); /* #F9C232 */
+  --brand-teal: oklch(73.222% 0.11949 202.585); /* #21BEC9 */
+  --brand-gold: oklch(84.116% 0.15939 85.906); /* #F9C232 */
   --neutral-01: oklch(1 0 0); /* #FFFFFF */
-  --neutral-02: oklch(0.745 0 0); /* #B9B9B9 */
-  --neutral-03: oklch(0.24 0 0); /* #343434 */
-  --neutral-04: oklch(0.145 0 0); /* #0F0F0F */
+  --neutral-02: oklch(78.577% 0.00009 271.152); /* #B9B9B9 */
+  --neutral-03: oklch(32.504% 0.00004 271.152); /* #343434 */
+  --neutral-04: oklch(16.842% 0.00002 271.152); /* #0F0F0F */
   --neutral-05: oklch(0 0 0); /* #000000 */
   --glass: rgba(126, 126, 126, 0.55);
 
@@ -151,8 +151,13 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 
-  --brand-teal: oklch(0.78 0.122 207);
-  --brand-gold: oklch(0.84 0.163 82);
+  --brand-teal: oklch(73.222% 0.11949 202.585); /* #21BEC9 */
+  --brand-gold: oklch(84.116% 0.15939 85.906); /* #F9C232 */
+  --neutral-01: oklch(0 0 0); /* #000000 - pure black background */
+  --neutral-02: oklch(20% 0.00002 271.152); /* #202020 - dark surface */
+  --neutral-03: oklch(35% 0.00004 271.152); /* #3A3A3A - elevated surface */
+  --neutral-04: oklch(70% 0.00007 271.152); /* #9E9E9E - secondary text */
+  --neutral-05: oklch(90% 0.00009 271.152); /* #E5E5E5 - primary text */
 }
 
 @theme inline {

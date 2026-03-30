@@ -2,7 +2,7 @@ import { SVGProps } from "react";
 
 export default function LogoIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
     return (
-        <svg width="auto" height="auto" viewBox="0 0 173 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+        <svg width="173" height="40" viewBox="0 0 173 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             className={className} {...props}>
             <path fillRule="evenodd" clipRule="evenodd" d="M82.6297 5.70581C72.8053 2.59253 61.2482 0.596354 48.7825 0.093689V3.10444C61.4699 3.66743 73.103 5.93099 82.6297 9.41018V5.70581Z" fill="url(#paint0_linear_6578_108)" />
             <path fillRule="evenodd" clipRule="evenodd" d="M4.948 4.96635V8.55831C14.778 5.30091 26.6085 3.28912 39.4015 3.00188V0C26.8014 0.257515 15.0439 2.03877 4.948 4.96635Z" fill="url(#paint1_linear_6578_108)" />

@@ -22,9 +22,23 @@ export default function Header() {
 
     // Sticky scroll effect
     useEffect(() => {
-        const handleScroll = () => {
+        let ticking = false;
+
+        const checkScroll = () => {
             setScrolled(window.scrollY > 30);
+            ticking = false;
         };
+
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(checkScroll);
+                ticking = true;
+            }
+        };
+
+        // Check initial scroll position
+        checkScroll();
+
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);

@@ -33,16 +33,19 @@ export default function TrustedBySection() {
                             key={index}
                             className="flex items-center justify-center
                 bg-[#EEF9FB] border border-[#D3F5F8]
-                rounded-2xl px-6 py-8
+                rounded-2xl px-3 py-2
                 transition-all duration-300 ease-in-out
-                hover:-translate-y-1 hover:shadow-md"
+                hover:-translate-y-1 hover:shadow-md h-30"
+                            style={{
+                                background: "linear-gradient(104.8deg, rgba(211, 245, 248, 0.4) -72.03%, #FFFFFF 101.74%)"
+                            }}
                         >
                             <Image
                                 src={partner.logo}
                                 alt={partner.name}
-                                width={140}
-                                height={56}
-                                className="w-full h-auto max-h-14 object-contain"
+                                height={0}
+                                width={0}
+                                className="object-contain max-w-35 w-full h-auto"
                             />
                         </div>
                     ))}

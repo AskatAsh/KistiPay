@@ -11,15 +11,14 @@ const AppStore = ({ link, label }: IProps) => {
         <Link
             href={link || "#"}
             aria-label={label || "Download on App Store"}
-            className="inline-block transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 rounded-md overflow-hidden"
+            className="inline-block transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 rounded-sm overflow-hidden"
         >
             <Image
-                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                src="/assets/icons/app-store.svg"
                 alt={label || "Download on the App Store"}
-                width={167}
-                height={48}
-                className="h-12 w-auto"
-                unoptimized
+                width={119.66407}
+                height={40}
+                className='h-12 w-auto'
             />
         </Link>
     )
