@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -92,6 +93,7 @@ type PaymentCardProps = {
     accentText: string;
     decorImage?: string;
     decorPosition?: "bottom-left" | "top-right";
+    decorImageStyles?: string;
 };
 
 function PaymentCard({
@@ -101,10 +103,15 @@ function PaymentCard({
     accentText,
     decorImage,
     decorPosition = "bottom-left",
+    decorImageStyles
 }: PaymentCardProps) {
     return (
         <div className="relative bg-white rounded-3xl p-6 sm:p-8 md:p-10 overflow-hidden flex flex-col gap-6 md:gap-10"
-            style={{ backgroundImage: "url('')" }}>
+            style={{
+                backgroundImage: "url('/assets/images/payment-method-background-01.png')",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "0% 90%"
+            }}>
             {/* Card title */}
             <h3 className="font-serif font-bold text-neutral-05 text-2xl sm:text-3xl md:text-[2.375rem]">
                 {title}
@@ -125,15 +132,14 @@ function PaymentCard({
             {/* Decorative corner image */}
             {decorImage && (
                 <div
-                    className={`absolute opacity-20 pointer-events-none
-            ${decorPosition === "bottom-left" ? "bottom-4 left-4" : "top-4 right-4"}`}
+                    className={cn("absolute opacity-20 pointer-events-none", decorPosition === "bottom-left" ? "-bottom-35 -left-20" : "-top-20 -right-25")}
                 >
                     <Image
-                        src="/assets/images/flexible-payments-bg.svg"
-                        alt=""
-                        width={80}
-                        height={80}
-                        className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                        src="/assets/images/payment-method-background-01.png"
+                        alt="payment methods pay icon"
+                        width={776}
+                        height={776}
+                        className={cn("w-60 h-60 object-contain opacity-50", decorImageStyles)}
                     />
                 </div>
             )}
@@ -168,6 +174,7 @@ export default function HowDoIPaySection() {
                             accentText="#21BEC9"
                             decorImage="/assets/icons/pay-badge.svg"
                             decorPosition="bottom-left"
+                            decorImageStyles="rotate-25"
                         />
                     </div>
 
@@ -181,6 +188,7 @@ export default function HowDoIPaySection() {
                             accentText="#F7941D"
                             decorImage="/assets/icons/pay-badge.svg"
                             decorPosition="top-right"
+                            decorImageStyles="rotate-45"
                         />
                     </div>
 
