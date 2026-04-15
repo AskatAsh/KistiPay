@@ -59,7 +59,7 @@ export default function EasyIntegrationSection() {
 
                     {/* ── Right: Integration Cards Grid ── */}
                     <div className="w-full lg:w-[62%] order-1 lg:order-2">
-                        <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                             {integrations.map((item, index) => (
                                 <div
                                     key={index}
@@ -71,7 +71,7 @@ export default function EasyIntegrationSection() {
                                         alt={item.name}
                                         width={82}
                                         height={82}
-                                        className="w-10 h-10 sm:w-auto sm:h-auto object-contain mb-4"
+                                        className="w-auto h-auto object-contain mb-4"
                                     />
 
                                     {/* Label */}

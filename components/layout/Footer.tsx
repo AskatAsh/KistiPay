@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { InstagramIcon, LinkedinIcon, LogoIcon, XIcon } from "../icons";
@@ -21,6 +23,11 @@ const socialLinks = [
     { label: "Instagram", href: "#", icon: InstagramIcon },
     { label: "Twitter", href: "#", icon: XIcon }
 ];
+
+const scrollToTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 export default function Footer() {
     return (
@@ -100,7 +107,8 @@ export default function Footer() {
                     {/* Back to Top + Copyright */}
                     <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
                         <Link
-                            href="#"
+                            href=""
+                            onClick={scrollToTop}
                             className="flex items-center gap-2 font-sans font-normal text-base text-white no-underline transition-colors duration-200 hover:text-brand-teal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal rounded group"
                         >
                             Back to Top

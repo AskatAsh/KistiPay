@@ -1,6 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import {
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetHeader,
+} from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -17,7 +23,7 @@ const navLinks = [
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [sheetOpen, setSheetOpen] = useState(false);
     const pathname = usePathname();
 
     // Sticky scroll effect
@@ -36,37 +42,18 @@ export default function Header() {
             }
         };
 
-        // Check initial scroll position
         checkScroll();
 
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Close mobile menu on resize to desktop
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth >= 1024) setMenuOpen(false);
-        };
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    // Prevent body scroll when mobile menu is open
-    useEffect(() => {
-        document.body.style.overflow = menuOpen ? "hidden" : "";
-        return () => { document.body.style.overflow = ""; };
-    }, [menuOpen]);
-
     return (
         <header
             id="header"
             className={cn(
-                // Base styles
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-                // Transparent when at top
                 !scrolled && "bg-transparent py-5",
-                // White + shadow when scrolled
                 scrolled && "bg-white shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-3"
             )}
         >
@@ -89,9 +76,7 @@ export default function Header() {
                                     className={cn(
                                         "relative px-3 py-1 text-base font-sans transition-colors duration-300 rounded",
                                         "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal",
-                                        // Default state
                                         pathname !== link.href && "font-normal text-neutral-03 hover:text-brand-teal",
-                                        // Active state
                                         pathname === link.href && "font-semibold text-neutral-04"
                                     )}
                                 >
@@ -115,51 +100,62 @@ export default function Header() {
                         </Button>
                     </div>
 
-                    {/* Mobile Hamburger Button */}
+                    {/* Mobile Menu Trigger */}
                     <button
                         type="button"
                         aria-label="Toggle navigation"
-                        aria-expanded={menuOpen}
-                        aria-controls="mobile-menu"
-                        onClick={() => setMenuOpen((prev) => !prev)}
+                        onClick={() => setSheetOpen(true)}
                         className={cn(
                             "lg:hidden p-2 rounded-md transition-colors duration-200",
                             "text-neutral-03 hover:text-brand-teal",
                             "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal"
                         )}
                     >
-                        {menuOpen ? (
-                            <X size={24} strokeWidth={2} />
-                        ) : (
-                            <Menu size={24} strokeWidth={2} />
-                        )}
+                        <Menu size={24} strokeWidth={2} />
                     </button>
                 </div>
+            </nav>
 
-                {/* Mobile Menu */}
-                <div
-                    id="mobile-menu"
-                    className={cn(
-                        "lg:hidden transition-all duration-300 ease-in-out",
-                        menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
-                    )}
+            {/* Mobile Sheet Menu */}
+            <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+                <SheetContent
+                    side="top"
+                    className="w-full pt-6 px-6 pb-8"
+                    showCloseButton={false}
                 >
-                    <div className="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.10)]">
-                        <ul className="flex flex-col mb-6">
+                    <SheetHeader className="flex flex-row items-center justify-between mb-4 p-0">
+                        <Link
+                            href="/"
+                            onClick={() => setSheetOpen(false)}
+                            className="flex items-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal rounded"
+                        >
+                            <LogoIcon className="h-8 w-auto" />
+                        </Link>
+
+                        <SheetClose className={cn(
+                            "p-2 rounded-md transition-colors duration-200",
+                            "text-neutral-03 hover:text-brand-teal",
+                            "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal"
+                        )}>
+                            <X size={24} strokeWidth={2} />
+                            <span className="sr-only">Close menu</span>
+                        </SheetClose>
+                    </SheetHeader>
+
+                    {/* Navigation Links */}
+                    <nav className="mb-8">
+                        <ul className="flex flex-col">
                             {navLinks.map((link, index) => (
                                 <li
                                     key={link.label}
                                     className={cn(
                                         "py-2",
-                                        index < navLinks.length - 1 && "border-b border-neutral-01"
+                                        index < navLinks.length - 1 && "border-b border-neutral-02/20"
                                     )}
-                                    style={{ borderColor: "#f5f5f5" }}
                                 >
                                     <Link
                                         href={link.href}
-                                        onClick={() => {
-                                            setMenuOpen(false);
-                                        }}
+                                        onClick={() => setSheetOpen(false)}
                                         className={cn(
                                             "block py-3 text-base font-sans transition-colors duration-200",
                                             "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-teal rounded",
@@ -173,22 +169,22 @@ export default function Header() {
                                 </li>
                             ))}
                         </ul>
+                    </nav>
 
-                        {/* Mobile CTA */}
-                        <Button
-                            asChild
-                            className={cn(
-                                "w-full font-sans font-medium py-3 rounded-lg transition-all duration-300 h-13",
-                                "bg-brand-teal text-white hover:bg-brand-teal/90"
-                            )}
-                        >
-                            <Link href="#download" onClick={() => setMenuOpen(false)}>
-                                Download App
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
-            </nav>
+                    {/* Mobile CTA */}
+                    <Button
+                        asChild
+                        className={cn(
+                            "w-full font-sans font-medium py-3 rounded-lg transition-all duration-300 h-13",
+                            "bg-brand-teal text-white hover:bg-brand-teal/90"
+                        )}
+                    >
+                        <Link href="#download" onClick={() => setSheetOpen(false)}>
+                            Download App
+                        </Link>
+                    </Button>
+                </SheetContent>
+            </Sheet>
         </header>
     );
 }

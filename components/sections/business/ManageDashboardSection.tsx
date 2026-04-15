@@ -31,7 +31,7 @@ export default function ManageDashboardSection() {
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
                     {/* ── Left: Dashboard Mockup ── */}
-                    <div className="flex-1 lg:flex-[1.1]">
+                    <div className="flex-1 lg:flex-[1.1] w-full">
                         {/* Image */}
                         <div className="rounded-xl overflow-hidden aspect-576/648 bg-white/60 flex items-center justify-center">
                             <Image

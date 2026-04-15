@@ -40,7 +40,7 @@ export default function WhyBusinessesSection() {
                     wrapperStyles="mb-10 sm:mb-16 max-w-[770px] mx-auto" />
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
                         <div key={index} className="flex flex-col">
 

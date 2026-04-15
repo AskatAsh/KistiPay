@@ -22,7 +22,7 @@ export default function SellAnywhereSection() {
     return (
         <section className="section-spacing">
             <div className="container">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-14">
+                <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-14">
 
                     {/* ── Left: 2x2 Image Grid ── */}
                     <div className="flex-1">

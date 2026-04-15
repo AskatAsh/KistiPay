@@ -81,14 +81,14 @@ export default function BrandsSection() {
                 {/* Section Header */}
                 <SectionHeader badgeText="Trusted Partner" title="Shop brands you love" subtitle="Discover trusted partners across multiple categories.">
                     {/* CTA Button */}
-                    <CTALinkButton href="#" className="font-medium text-base h-[42px] px-4 rounded-xl sm:mt-6">
+                    <CTALinkButton href="#" className="font-medium text-base h-[42px] px-4 rounded-xl mt-6">
                         Discover Brands
                     </CTALinkButton>
                 </SectionHeader>
 
 
                 {/* Brand Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     {brandsData.map((brand) => (
                         <BrandCard key={brand.title} {...brand} />
                     ))}

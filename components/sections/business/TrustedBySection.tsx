@@ -8,7 +8,7 @@ const partners = [
     { name: "Arogga", logo: "/assets/icons/brand-arogga.svg" },
     { name: "SaRa Lifestyle", logo: "/assets/icons/brand-sara.svg" },
     { name: "Walton", logo: "/assets/icons/brand-walton.svg" },
-    { name: "Walton", logo: "/assets/icons/brand-walton.svg" },
+    // { name: "Walton", logo: "/assets/icons/brand-walton.svg" },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -21,11 +21,11 @@ export default function TrustedBySection() {
                 {/* Heading */}
                 <SectionHeader
                     title="Businesses trust KistiPay to power flexible payments"
-                    titleStyles="font-semibold text-neutral-04 text-center lg:text-[3rem] leading-[1.1] mt-0"
+                    titleStyles="font-semibold text-neutral-04 text-center text-3xl lg:text-[3rem] leading-[1.1] mt-0"
                     wrapperStyles="mb-10 sm:mb-16 max-w-[770px] mx-auto" />
 
                 {/* Logo Cards Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     {partners.map((partner, index) => (
                         <div
                             key={index}

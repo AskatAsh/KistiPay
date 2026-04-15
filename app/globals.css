@@ -244,7 +244,7 @@
     @apply border-border outline-ring/50;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
   }
   .container {
     @apply lg:max-w-300! xl:max-w-300! 2xl:max-w-300! w-full mx-auto px-4 md:px-6;

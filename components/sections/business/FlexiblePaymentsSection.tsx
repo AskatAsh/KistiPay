@@ -24,7 +24,7 @@ export default function FlexiblePaymentsSection() {
     return (
         <section className="section-spacing">
             <div className="container">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div className="flex flex-col-reverse lg:flex-row lg:items-center gap-12 lg:gap-20">
 
                     {/* ── Left: Text Content ── */}
                     <div className="flex-1">

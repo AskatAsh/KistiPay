@@ -155,13 +155,13 @@ export default function HowDoIPaySection() {
             className="section-spacing bg-neutral-03"
         >
             <div className="container">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start">
 
                     {/* ── Left: Heading + Installments Card ── */}
                     <div className="max-w-[524px] w-full flex flex-col gap-8">
                         {/* Section heading */}
                         <h2
-                            className="font-serif font-bold text-white leading-[1.1] text-[2.25rem] lg:text-[3.875rem] mb-10 sm:mb-16"
+                            className="font-serif font-bold text-white leading-[1.1] text-[2.25rem] lg:text-[3.875rem] mb-10 lg:mb-16"
                         >
                             How do I pay with KistiPay?
                         </h2>
@@ -179,7 +179,7 @@ export default function HowDoIPaySection() {
                     </div>
 
                     {/* ── Right: Pay in Full Card ── */}
-                    <div className="max-w-[524px] w-full mt-24 lg:mt-0">
+                    <div className="max-w-[524px] w-full mt-16 lg:mt-0">
                         {/* Pay in full card — gold accent */}
                         <PaymentCard
                             title="Pay in full"
